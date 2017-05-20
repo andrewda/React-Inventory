@@ -15,11 +15,11 @@ class SideBar extends Component {
     render() {
         return (
             <div>
-                <Drawer open={this.state.open}>
-                    <AppBar />
+                <Drawer open={this.state.open} zDepth={1}>
+                    <AppBar showMenuIconButton={false} title="Inventory"/>
                     <MenuItem>Menu Item</MenuItem>
                     <MenuItem>Menu Item 2</MenuItem>
-                    </Drawer>
+                </Drawer>
             </div>
         );
     }
