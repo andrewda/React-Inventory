@@ -12,8 +12,6 @@ class MainPage extends Component {
     render() {
         return (
             <div className="App">
-                <SideBar />
-                <AppBar ishowMenuIconButton={false} />
                 <Grid />
             </div>
         );

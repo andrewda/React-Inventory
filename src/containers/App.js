@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import AppBar from 'material-ui/AppBar';
 
 import Routes from './Routes';
 
@@ -16,7 +17,10 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <MuiThemeProvider>
-                    <Routes />
+                    <div>
+                        <AppBar ishowMenuIconButton={false} />
+                        <Routes />
+                    </div>
                 </MuiThemeProvider>
             </Provider>
         );
