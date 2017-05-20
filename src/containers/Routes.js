@@ -2,14 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import MainPage from './MainPage'
 
-const routes = [
-    {
-        path: '/',
-        exact: true,
-        sidebar: () => <div>home!</div>,
-        main: MainPage
-    }
-];
+import routes from '../routes';
 
 class Routes extends Component {
     render() {
@@ -17,12 +10,7 @@ class Routes extends Component {
             <Router>
                 <div>
                     {routes.map((route, index) => (
-                        <Route
-                            key={index}
-                            path={route.path}
-                            exact={route.exact}
-                            component={route.main}
-                        />
+                        <Route key={index} {...route} />
                     ))}
                 </div>
             </Router>
