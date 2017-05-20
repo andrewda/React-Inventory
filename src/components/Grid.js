@@ -11,7 +11,6 @@ const styles = {
     width: '80%',
     margin: 'auto',
     textAlign: 'center',
-    'vertical-align': 'middle'
   }
 };
 
