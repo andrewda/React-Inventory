@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
+
+import logo from '../logo.svg';
 
 class Header extends Component {
     constructor(props) {
@@ -16,9 +19,9 @@ class Header extends Component {
     render() {
         return (
             <div className="App-header">
-                <img src={this.props.imageSource} className="App-logo" alt="logo" />
+                <img src={logo} className="App-logo" alt="logo" />
                 <h2>{this.state.foo}</h2>
-                <button onClick={this.updateMessage}>Button</button>
+                <RaisedButton primary={true} label="Click Me!" onClick={this.updateMessage} />
             </div>
         );
     }
