@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Provider } from 'react-redux';
+import React, {Component} from 'react';
+import {Provider} from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -16,14 +16,11 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <MuiThemeProvider>
-                    <Routes />
+                    <Routes/>
                 </MuiThemeProvider>
             </Provider>
         );
     }
 }
-
-
-
 
 export default App;

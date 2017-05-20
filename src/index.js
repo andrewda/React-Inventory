@@ -12,9 +12,10 @@ var config = {
     projectId: "frc-inventory",
     storageBucket: "frc-inventory.appspot.com",
     messagingSenderId: "596898757396"
-  };
+};
 
 firebase.initializeApp(config);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <App/>, document.getElementById('root'));
 registerServiceWorker();
