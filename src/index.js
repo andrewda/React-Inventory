@@ -12,7 +12,7 @@ const config = {
     projectId: "frc-inventory",
     storageBucket: "frc-inventory.appspot.com",
     messagingSenderId: "596898757396"
-};
+  };
 
 firebase.initializeApp(config);
 
