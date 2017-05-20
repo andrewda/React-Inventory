@@ -5,6 +5,7 @@ import SideBar from '../components/SideBar';
 import Grid from '../components/Grid';
 import AppBar from 'material-ui/AppBar';
 import Grid from '../components/Grid';
+import AppBar from 'material-ui/AppBar';
 
 import logo from '../logo.svg';
 
