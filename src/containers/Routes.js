@@ -6,8 +6,7 @@ const routes = [
     {
         path: '/',
         exact: true,
-        sidebar: () => <div>home!</div>,
-        main: MainPage
+        component: MainPage
     }
 ];
 
@@ -17,12 +16,7 @@ class Routes extends Component {
             <Router>
                 <div>
                     {routes.map((route, index) => (
-                        <Route
-                            key={index}
-                            path={route.path}
-                            exact={route.exact}
-                            component={route.main}
-                        />
+                        <Route key={index} {...route} />
                     ))}
                 </div>
             </Router>
