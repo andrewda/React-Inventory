@@ -8,14 +8,14 @@ import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 class Tote extends Component {
     render() {
         return (
-                <GridTile
-                  key={this.props.name}
-                  title={this.props.name}
-                  subtitle={<span>Last updated: <b>{this.props.lastupdate}</b></span>}
-                  actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
-                >
-                  <img src={this.props.img} />
-                </GridTile>
+            <GridTile
+              key={this.props.name}
+              title={this.props.name}
+              subtitle={<span>Last updated: <b>{this.props.lastupdate}</b></span>}
+            >
+              <img src={this.props.img} />
+            </GridTile>
+
         )
     }
 }

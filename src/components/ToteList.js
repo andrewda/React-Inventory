@@ -4,7 +4,7 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-import Tote;
+import Tote from './Tote';
 
 const styles = {
   root: {
@@ -24,37 +24,37 @@ const tilesData = [
     img: 'images/tote.jpg',
     title: 'tote1',
     lastupdate: 'n/a',
-    href: "#",
+    link: "#",
     },
     {
     img: 'images/tote.jpg',
     title: 'tote2',
     lastupdate: 'n/a',
-    href: "#",
+    link: "#",
     },
     {
     img: 'images/tote.jpg',
     title: 'tote3',
     lastupdate: 'n/a',
-    href: "#",
+    link: "#",
     },
     {
     img: 'images/tote.jpg',
     title: 'tote4',
     lastupdate: 'n/a',
-    href: "#",
+    link: "#",
     },
     {
     img: 'images/tote.jpg',
     title: 'tote5',
     lastupdate: 'n/a',
-    href: "#",
+    link: "#",
     },
     {
     img: 'images/tote.jpg',
     title: 'tote6',
     lastupdate: 'n/a',
-    href: "#",
+    link: "#",
     },
 ];
 
@@ -66,9 +66,8 @@ const ToteList = () => (
       cols={3}
       style={styles.gridList}
     >
-        <Tote name={} img="images/tote.jpg" />
       {tilesData.map((tile) => (
-          <Tote name={tile.title} img={tile.img} />
+          <a href={tile.link}><Tote name={tile.title} img={tile.img} /></a>
       ))}
     </GridList>
   </div>
