@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import MainPage from './MainPage'
 
-const routes = [
-    {
-        path: '/',
-        exact: true,
-        component: MainPage
-    }
-];
+import routes from '../routes';
 
 class Routes extends Component {
     render() {
