@@ -14,7 +14,7 @@ class Header extends Component {
     }
 
     updateMessage() {
-        this.setState({ title: 'YEAH BOIIIIII' });
+        this.setState({ title: 'YEAH BOIIIIIIIIIIIIIIIIIIIII' });
     }
 
     updateMessage2() {
