@@ -19,7 +19,7 @@ class SideBar extends Component {
         return (
             <div>
                 <Drawer open={this.state.open}>
-                    <AppBar showMenuIconButton={false} title="Inventory"/>
+                    <AppBar showMenuIconButton={false} title="FRC Inventory"/>
                     <div>
                         {Navigation.routes.map((route, index) => {
                             if (route.navigation) {
