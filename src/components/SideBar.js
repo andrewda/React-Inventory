@@ -16,6 +16,7 @@ const SideBar = (props) => (
                 onClick={() => { props.history.push('items') }} />
             <ListItem
                 primaryText="Locations"
+                onClick={() => { props.history.push('locations') }}
                 primaryTogglesNestedList={true}
                 nestedItems={[
                     <ListItem

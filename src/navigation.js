@@ -1,6 +1,7 @@
 import Home from './containers/Home';
 import ToteView from './containers/ToteView';
 import AllItems from './containers/AllItems';
+import AllLocations from './containers/AllLocations';
 
 class Navigation {
     static get routes() {
@@ -17,6 +18,10 @@ class Navigation {
             {
                 path: '/totes',
                 component: ToteView
+            },
+            {
+                path: '/locations',
+                component: AllLocations
             }
         ];
     }
