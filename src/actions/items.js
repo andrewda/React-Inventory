@@ -17,7 +17,7 @@ export function listenForItemChanges() {
     return (dispatch, getState) => {
         const { firebaseRef } = getState();
         firebaseRef.child('items').on('value', (snapshot) => {
-            dispatch(replaceItems(snapshot.val()))
+            dispatch(replaceItems(snapshot))
         });
     };
 }

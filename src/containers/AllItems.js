@@ -11,7 +11,7 @@ import logo from '../logo.svg';
 const style = {
     position: "relative",
     width: "90%",
-    // top: "25px",
+    top: "25px",
     left: "5%"
 };
 
@@ -24,7 +24,7 @@ class AllItems extends Component {
         return (
             <div className="AllItems page">
                 <Paper style={style}>
-                    <ItemsTable />
+                    <ItemsTable items={this.props.items} />
                 </Paper>
             </div>
         );

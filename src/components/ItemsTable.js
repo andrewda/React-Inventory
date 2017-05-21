@@ -1,34 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
-  Table,
-  TableBody,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn,
+    Table,
+    TableBody,
+    TableHeader,
+    TableHeaderColumn,
+    TableRow,
+    TableRowColumn,
 } from 'material-ui/Table';
 import Item from "./Item";
 
-/**
- * A simple table demonstrating the hierarchy of the `Table` component and its sub-components.
- */
-const ItemsTable = () => (
-  <Table>
-    <TableHeader displaySelectAll={true} adjustForCheckbox={true}>
-      <TableRow>
-        <TableHeaderColumn>ID</TableHeaderColumn>
-        <TableHeaderColumn>Name</TableHeaderColumn>
-        <TableHeaderColumn>Status</TableHeaderColumn>
-      </TableRow>
-    </TableHeader>
-    <TableBody displayRowCheckbox={true}>
-        <Item id="1" name="test1" description="test1" />
-        <Item id="1" name="test1" description="test1" />
-        <Item id="1" name="test1" description="test1" />
-        <Item id="1" name="test1" description="test1" />
-        <Item id="1" name="test1" description="test1" />
-    </TableBody>
-  </Table>
-);
+class ItemsTable extends Component {
+    renderItems() {
+        const items = [];
+
+        this.props.items.forEach((snap) => {
+            const { name, status } = snap.val();
+            items.push(<Item key={snap.key} id={snap.key} name={name} status={status} />);
+        });
+
+        return items;
+    }
+
+    render() {
+        return (
+            <Table>
+                <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
+                    <TableRow>
+                        <TableHeaderColumn>ID</TableHeaderColumn>
+                        <TableHeaderColumn>Name</TableHeaderColumn>
+                        <TableHeaderColumn>Status</TableHeaderColumn>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    {this.renderItems.call(this)}
+                </TableBody>
+            </Table>
+        );
+    }
+}
 
 export default ItemsTable;

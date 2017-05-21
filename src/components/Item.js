@@ -10,14 +10,14 @@ import {
 
 class Item extends Component {
     render() {
-        const { yourProps, ...other } = this.props;
+        const { id, name, status, ...other } = this.props;
         return (
-          <TableRow {...other}>
-            <TableRowColumn>{this.props.id}</TableRowColumn>
-            <TableRowColumn>{this.props.name}</TableRowColumn>
-            <TableRowColumn>{this.props.description}</TableRowColumn>
-          </TableRow>
-        )
+            <TableRow {...other}>
+                <TableRowColumn>{id}</TableRowColumn>
+                <TableRowColumn>{name}</TableRowColumn>
+                <TableRowColumn>{status}</TableRowColumn>
+            </TableRow>
+        );
     }
 }
 
