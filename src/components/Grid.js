@@ -20,10 +20,6 @@ const styles = {
 };
 
 class Grid extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div>
