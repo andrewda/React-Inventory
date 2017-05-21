@@ -6,6 +6,8 @@ import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import Tote from './Tote';
 
+import ToteImage from '../images/tote.jpg';
+
 const styles = {
   root: {
     display: 'flex',
@@ -21,37 +23,37 @@ const styles = {
 
 const tilesData = [
     {
-    img: 'images/tote.jpg',
+    img: ToteImage,
     title: 'tote1',
     lastupdate: 'n/a',
     link: "#",
     },
     {
-    img: 'images/tote.jpg',
+    img: ToteImage,
     title: 'tote2',
     lastupdate: 'n/a',
     link: "#",
     },
     {
-    img: 'images/tote.jpg',
+    img: ToteImage,
     title: 'tote3',
     lastupdate: 'n/a',
     link: "#",
     },
     {
-    img: 'images/tote.jpg',
+    img: ToteImage,
     title: 'tote4',
     lastupdate: 'n/a',
     link: "#",
     },
     {
-    img: 'images/tote.jpg',
+    img: ToteImage,
     title: 'tote5',
     lastupdate: 'n/a',
     link: "#",
     },
     {
-    img: 'images/tote.jpg',
+    img: ToteImage,
     title: 'tote6',
     lastupdate: 'n/a',
     link: "#",
