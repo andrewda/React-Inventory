@@ -1,22 +1,8 @@
 import React from 'react';
 import { GridList } from 'material-ui/GridList';
-import Subheader from 'material-ui/Subheader';
 import Tote from './Tote';
 
 import ToteImage from '../images/tote.jpg';
-
-const styles = {
-    root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around',
-    },
-    gridList: {
-        width: 750,
-        height: 450,
-        overflowY: 'auto',
-    }
-};
 
 const tilesData = [
     {
@@ -58,20 +44,14 @@ const tilesData = [
 ];
 
 const ToteList = () => (
-    <div style={styles.root}>
-        <Subheader><h1>Totes</h1></Subheader>
         <GridList
             cellHeight={180}
             cols={3}
-            style={styles.gridList}
         >
             {tilesData.map((tile, index) => (
-                <a key={index} href={tile.link}>
-                    <Tote name={tile.title} img={tile.img} />
-                </a>
+                <Tote key={index} name={tile.title} img={tile.img} />
             ))}
         </GridList>
-    </div>
 );
 
 export default ToteList;

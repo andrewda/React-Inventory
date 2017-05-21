@@ -5,9 +5,10 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import AppBar from 'material-ui/AppBar';
 import * as firebase from 'firebase';
 
-import Routes from './Routes';
+import Routes from '../components/Routes';
 
-import * as actions from '../actions/firebaseRef';
+import { setFirebaseRef } from '../actions/firebaseRef';
+import { listenForItemChanges } from '../actions/items';
 
 import '../styles/App.css';
 
@@ -27,6 +28,7 @@ const firebaseApp = firebase.initializeApp(config);
 class App extends Component {
     componentWillMount() {
         this.props.setFirebaseRef(firebaseApp.database().ref())
+        this.props.listenForItemChanges();
     }
 
     render() {
@@ -41,4 +43,9 @@ class App extends Component {
     }
 }
 
-export default connect(null, actions)(App);
+const mapDispatchToProps = (dispatch) => ({
+    setFirebaseRef: (ref) => dispatch(setFirebaseRef(ref)),
+    listenForItemChanges: () => dispatch(listenForItemChanges())
+});
+
+export default connect(null, mapDispatchToProps)(App);

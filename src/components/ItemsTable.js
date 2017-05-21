@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
     Table,
     TableBody,
@@ -8,34 +8,30 @@ import {
 } from 'material-ui/Table';
 import Item from "./Item";
 
-class ItemsTable extends Component {
-    renderItems() {
-        const items = [];
+const renderItems = (props) => {
+    const items = [];
 
-        this.props.items.forEach((snap) => {
-            const { name, status } = snap.val();
-            items.push(<Item key={snap.key} id={snap.key} name={name} status={status} />);
-        });
+    props.items.forEach((snap) => {
+        const { name, status } = snap.val();
+        items.push(<Item key={snap.key} id={snap.key} name={name} status={status} />);
+    });
 
-        return items;
-    }
+    return items;
+};
 
-    render() {
-        return (
-            <Table>
-                <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
-                    <TableRow>
-                        <TableHeaderColumn>ID</TableHeaderColumn>
-                        <TableHeaderColumn>Name</TableHeaderColumn>
-                        <TableHeaderColumn>Status</TableHeaderColumn>
-                    </TableRow>
-                </TableHeader>
-                <TableBody>
-                    {this.renderItems.call(this)}
-                </TableBody>
-            </Table>
-        );
-    }
-}
+const ItemsTable = (props) => (
+    <Table>
+        <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
+            <TableRow>
+                <TableHeaderColumn>ID</TableHeaderColumn>
+                <TableHeaderColumn>Name</TableHeaderColumn>
+                <TableHeaderColumn>Status</TableHeaderColumn>
+            </TableRow>
+        </TableHeader>
+        <TableBody>
+            {renderItems(props)}
+        </TableBody>
+    </Table>
+);
 
 export default ItemsTable;

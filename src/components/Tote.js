@@ -1,18 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { GridTile } from 'material-ui/GridList';
 
-class Tote extends Component {
-    render() {
-        return (
-            <GridTile
-                key={this.props.name}
-                title={this.props.name}
-                subtitle={<span>Last updated: <b>{this.props.lastupdate}</b></span>}
-            >
-                <img src={this.props.img} alt="Tote" />
-            </GridTile>
-        );
-    }
-}
+const Tote = (props) => (
+    <GridTile
+        title={props.name}
+        subtitle={<span>Last updated: <b>{props.lastUpdate}</b></span>}
+    >
+        <img src={props.img} alt="Tote" />
+    </GridTile>
+);
 
 export default Tote;

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import {GridList, GridTile} from 'material-ui/GridList';
+import React from 'react';
+import { GridList, GridTile } from 'material-ui/GridList';
 import Paper from 'material-ui/Paper';
 
 const cellHeight = 250
@@ -19,35 +19,31 @@ const styles = {
     }
 };
 
-class Grid extends Component {
-    render() {
-        return (
-            <div>
-                <GridList cellHeight={cellHeight}>
-                    <GridTile style={styles.gridList}>
-                        <Paper style={styles.paper} zDepth={1}>
-                            <h1 style={styles.header}>Browse by location</h1>
-                        </Paper>
-                    </GridTile>
-                    <GridTile>
-                        <Paper style={styles.paper} zDepth={1}>
-                            <h1 style={styles.header}>Browse by tote</h1>
-                        </Paper>
-                    </GridTile>
-                    <GridTile>
-                        <Paper style={styles.paper} zDepth={1}>
-                            <h1 style={styles.header}>Browse by tag</h1>
-                        </Paper>
-                    </GridTile>
-                    <GridTile>
-                        <Paper style={styles.paper} zDepth={1}>
-                            <h1 style={styles.header}>View all</h1>
-                        </Paper>
-                    </GridTile>
-                </GridList>
-            </div>
-        );
-    }
-}
+const Grid = () => (
+    <div>
+        <GridList cellHeight={cellHeight}>
+            <GridTile style={styles.gridList}>
+                <Paper style={styles.paper} zDepth={1}>
+                    <h1 style={styles.header}>Browse by location</h1>
+                </Paper>
+            </GridTile>
+            <GridTile>
+                <Paper style={styles.paper} zDepth={1}>
+                    <h1 style={styles.header}>Browse by tote</h1>
+                </Paper>
+            </GridTile>
+            <GridTile>
+                <Paper style={styles.paper} zDepth={1}>
+                    <h1 style={styles.header}>Browse by tag</h1>
+                </Paper>
+            </GridTile>
+            <GridTile>
+                <Paper style={styles.paper} zDepth={1}>
+                    <h1 style={styles.header}>View all</h1>
+                </Paper>
+            </GridTile>
+        </GridList>
+    </div>
+);
 
 export default Grid;

@@ -1,5 +1,5 @@
 import Home from './containers/Home';
-import ToteList from './containers/ToteList';
+import ToteView from './containers/ToteView';
 import AllItems from './containers/AllItems';
 
 class Navigation {
@@ -16,7 +16,7 @@ class Navigation {
             },
             {
                 path: '/totes',
-                component: ToteList
+                component: ToteView
             }
         ];
     }
