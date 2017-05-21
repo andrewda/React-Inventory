@@ -6,14 +6,17 @@ import {
     TableHeaderColumn,
     TableRow
 } from 'material-ui/Table';
-import Item from "./Item";
+
+import Item from './Item';
+
+import ItemModel from '../models/Item';
 
 const renderItems = (props) => {
     const items = [];
 
     props.items.forEach((snap) => {
-        const { name, status } = snap.val();
-        items.push(<Item key={snap.key} id={snap.key} name={name} status={status} />);
+        const { name, statusText } = new ItemModel(snap.val());
+        items.push(<Item key={snap.key} id={snap.key} name={name} status={statusText} />);
     });
 
     return items;
@@ -23,7 +26,7 @@ const ItemsTable = (props) => (
     <Table>
         <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
             <TableRow>
-                <TableHeaderColumn>ID</TableHeaderColumn>
+                <TableHeaderColumn>Item ID</TableHeaderColumn>
                 <TableHeaderColumn>Name</TableHeaderColumn>
                 <TableHeaderColumn>Status</TableHeaderColumn>
             </TableRow>
