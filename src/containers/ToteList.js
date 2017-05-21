@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 import ToteList from '../components/ToteList';
 
-import logo from '../logo.svg';
-
 class MainPage extends Component {
     render() {
         return (

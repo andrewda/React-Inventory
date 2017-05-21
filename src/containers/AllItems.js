@@ -6,8 +6,6 @@ import Paper from 'material-ui/Paper';
 
 import * as actions from '../actions/items';
 
-import logo from '../logo.svg';
-
 const style = {
     position: "relative",
     width: "90%",
