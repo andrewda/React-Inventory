@@ -11,7 +11,7 @@ import logo from '../logo.svg';
 class MainPage extends Component {
     render() {
         return (
-            <div className="App">
+            <div className="ToteList page">
                 <ToteList />
             </div>
         );
