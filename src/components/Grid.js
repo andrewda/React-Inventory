@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {GridList, GridTile} from 'material-ui/GridList';
 import Paper from 'material-ui/Paper';
 
+const cellHeight = 250
+
 const styles = {
   gridList: {
     textAlign: 'center'
@@ -10,7 +12,10 @@ const styles = {
     height: '80%',
     width: '80%',
     margin: 'auto',
-    textAlign: 'center',
+    textAlign: 'center'
+  },
+  header: {
+    lineHeight: cellHeight*0.75 + 'px'
   }
 };
 
@@ -22,23 +27,23 @@ class Grid extends Component {
   render() {
     return (
       <div>
-        <GridList cellHeight={200}>
+        <GridList cellHeight={cellHeight}>
           <GridTile styles={styles.gridList}>
             <Paper style={styles.paper} zDepth={1}>
-              <h1>Browse by location</h1>
+              <h1 style={styles.header}>Browse by location</h1>
             </Paper>
           </GridTile>
             <Paper style={styles.paper} zDepth={1}>
-              <h1>Browse by location</h1>
+              <h1 style={styles.header}>Browse by tote</h1>
             </Paper>
           <GridTile>
             <Paper style={styles.paper} zDepth={1}>
-              <h1>Browse by location</h1>
+              <h1 style={styles.header}>Browse by tag</h1>
             </Paper>
           </GridTile>
           <GridTile>
             <Paper style={styles.paper} zDepth={1}>
-              <h1>Browse by location</h1>
+              <h1 style={styles.header}>View all</h1>
             </Paper>
           </GridTile>
         </GridList>
