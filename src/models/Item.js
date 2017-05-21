@@ -6,6 +6,9 @@ export default class Item {
         if (typeof item.description === 'string') this.description = item.description;
         else this.description = '';
 
+        if (typeof item.stock === 'number') this.stock = item.stock;
+        else this.stock = 0;
+
         if (typeof item.status === 'number') this.status = item.status;
         else this.status = 0;
 
