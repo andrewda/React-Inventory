@@ -65,8 +65,10 @@ const ToteList = () => (
             cols={3}
             style={styles.gridList}
         >
-            {tilesData.map((tile) => (
-                <a href={tile.link}><Tote name={tile.title} img={tile.img} /></a>
+            {tilesData.map((tile, index) => (
+                <a key={index} href={tile.link}>
+                    <Tote name={tile.title} img={tile.img} />
+                </a>
             ))}
         </GridList>
     </div>
