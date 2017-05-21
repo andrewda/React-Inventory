@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
 import AppBar from 'material-ui/AppBar';
+import MenuLocation from './MenuLocations'
 
 import Navigation from '../navigation';
 
@@ -21,15 +22,16 @@ class SideBar extends Component {
                 <Drawer open={this.state.open}>
                     <AppBar showMenuIconButton={false} title="FRC Inventory"/>
                     <div>
-                        {Navigation.routes.map((route, index) => {
-                            if (route.navigation) {
-                                return (
-                                    <Link key={index} className="MenuItem" to={route.path}>
-                                        <MenuItem>{route.name}</MenuItem>
-                                    </Link>
-                                );
-                            }
-                        })}
+                        <Link className="MenuItem" to="/">
+                            <MenuItem>Home</MenuItem>
+                        </Link>
+                        <Link className="MenuItem" to="/totes">
+                            <MenuItem>Totes</MenuItem>
+                        </Link>
+                        <Link className="MenuItem" to="/all">
+                            <MenuItem>All Items</MenuItem>
+                        </Link>
+                        <MenuLocation />
                     </div>
                 </Drawer>
             </div>

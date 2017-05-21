@@ -15,13 +15,13 @@ class Navigation {
             {
                 name: 'Tote List',
                 navigation: true,
-                path: '/ToteList',
+                path: '/totes',
                 component: ToteList
             },
             {
                 name: 'All Items',
                 navigation: true,
-                path: '/AllItems',
+                path: '/all',
                 component: AllItems
             }
         ];
