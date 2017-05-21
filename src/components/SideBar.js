@@ -1,10 +1,9 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
+import { ListItem } from 'material-ui/List';
 import RaisedButton from 'material-ui/RaisedButton';
 import AppBar from 'material-ui/AppBar';
-import MenuLocation from './MenuLocations'
 
 import Navigation from '../navigation';
 
@@ -23,15 +22,20 @@ class SideBar extends Component {
                     <AppBar showMenuIconButton={false} title="FRC Inventory"/>
                     <div>
                         <Link className="MenuItem" to="/">
-                            <MenuItem>Home</MenuItem>
-                        </Link>
-                        <Link className="MenuItem" to="/totes">
-                            <MenuItem>Totes</MenuItem>
+                            <ListItem primaryText="Home" />
                         </Link>
                         <Link className="MenuItem" to="/all">
-                            <MenuItem>All Items</MenuItem>
+                            <ListItem primaryText="All Items" value="/all" />
                         </Link>
-                        <MenuLocation />
+                        <ListItem
+                            primaryText="Locations"
+                            primaryTogglesNestedList={true}
+                            nestedItems={[
+                                <Link className="MenuItem" to="/totes">
+                                    <ListItem style={{"padding-left":25}} primaryText="Totes" />
+                                </Link>
+                            ]}
+                        />
                     </div>
                 </Drawer>
             </div>
