@@ -1,55 +1,68 @@
 import React from 'react';
-import { GridList } from 'material-ui/GridList';
-import Tote from './Tote';
+import { GridList, GridTile } from 'material-ui/GridList';
+import RaisedButton from 'material-ui/RaisedButton';
 
 import ToteImage from '../images/tote.jpg';
+
+const cellHeight = 250
 
 const tilesData = [
     {
         img: ToteImage,
-        title: 'tote1',
+        title: 'location 1',
         lastupdate: 'n/a',
         link: "#",
     },
     {
         img: ToteImage,
-        title: 'tote2',
+        title: 'location 2',
         lastupdate: 'n/a',
         link: "#",
     },
     {
         img: ToteImage,
-        title: 'tote3',
+        title: 'location 3',
         lastupdate: 'n/a',
         link: "#",
     },
     {
         img: ToteImage,
-        title: 'tote4',
+        title: 'location 4',
         lastupdate: 'n/a',
         link: "#",
     },
     {
         img: ToteImage,
-        title: 'tote5',
+        title: 'location 5',
         lastupdate: 'n/a',
         link: "#",
     },
     {
         img: ToteImage,
-        title: 'tote6',
+        title: 'location 6',
         lastupdate: 'n/a',
         link: "#",
     }
 ];
 
+const styles = {
+    tile: {
+        height: '80%',
+        width: '80%',
+        margin: 'auto',
+        textAlign: 'center'
+    }
+};
+
 const LocationList = () => (
-        <GridList
-            cellHeight={180}
-            cols={3}
-        >
+        <GridList cellHeight={180} cols={3}>
             {tilesData.map((tile, index) => (
-                <Tote key={index} name={tile.title} img={tile.img} />
+                <GridTile>
+                    <div style={styles.tile}>
+                        <h1>{tile.title}</h1>
+                        <RaisedButton label="Go to this location" fullWidth={true}  />
+                    </div>
+                </GridTile>
             ))}
         </GridList>
 );
