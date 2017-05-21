@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import Drawer from 'material-ui/Drawer';
 import { ListItem } from 'material-ui/List';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -10,9 +10,8 @@ import Navigation from '../navigation';
 class SideBar extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            open: true
-        };
+
+        this.state = { open: true };
     }
 
     render() {
@@ -21,21 +20,21 @@ class SideBar extends Component {
                 <Drawer open={this.state.open}>
                     <AppBar showMenuIconButton={false} title="FRC Inventory"/>
                     <div>
-                        <Link className="MenuItem" to="/">
-                            <ListItem primaryText="Home" />
-                        </Link>
-                        <Link className="MenuItem" to="/all">
-                            <ListItem primaryText="All Items" value="/all" />
-                        </Link>
+                        <ListItem
+                            primaryText="Home"
+                            onClick={() => { this.props.history.push('/') }} />
+                        <ListItem
+                            primaryText="All Items"
+                            onClick={() => { this.props.history.push('items') }} />
                         <ListItem
                             primaryText="Locations"
                             primaryTogglesNestedList={true}
                             nestedItems={[
-                                <Link className="MenuItem" to="/totes">
-                                    <ListItem style={{"padding-left":25}} primaryText="Totes" />
-                                </Link>
-                            ]}
-                        />
+                                <ListItem
+                                    key="Totes"
+                                    primaryText="Totes"
+                                    onClick={() => { this.props.history.push('totes') }} />
+                            ]} />
                     </div>
                 </Drawer>
             </div>
@@ -43,4 +42,4 @@ class SideBar extends Component {
     }
 }
 
-export default SideBar;
+export default withRouter(SideBar);

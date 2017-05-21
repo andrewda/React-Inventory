@@ -6,23 +6,17 @@ class Navigation {
     static get routes() {
         return [
             {
-                name: 'Home',
-                navigation: true,
                 path: '/',
                 exact: true,
                 component: Home
             },
             {
-                name: 'Tote List',
-                navigation: true,
-                path: '/totes',
-                component: ToteList
+                path: '/items',
+                component: AllItems
             },
             {
-                name: 'All Items',
-                navigation: true,
-                path: '/all',
-                component: AllItems
+                path: '/totes',
+                component: ToteList
             }
         ];
     }
