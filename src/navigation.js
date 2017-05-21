@@ -1,4 +1,4 @@
-import MainPage from './containers/MainPage';
+import Home from './containers/Home';
 import ToteList from './containers/ToteList';
 
 class Navigation {
@@ -9,15 +9,14 @@ class Navigation {
                 navigation: true,
                 path: '/',
                 exact: true,
-                component: MainPage
+                component: Home
             },
             {
-                name: 'ToteList',
+                name: 'Tote List',
                 navigation: true,
                 path: '/ToteList',
-                exact: true,
                 component: ToteList
-            },
+            }
         ];
     }
 }
