@@ -14,14 +14,14 @@ import Item from "./Item";
  */
 const ItemsTable = () => (
   <Table>
-    <TableHeader>
+    <TableHeader displaySelectAll={true} adjustForCheckbox={true}>
       <TableRow>
         <TableHeaderColumn>ID</TableHeaderColumn>
         <TableHeaderColumn>Name</TableHeaderColumn>
         <TableHeaderColumn>Status</TableHeaderColumn>
       </TableRow>
     </TableHeader>
-    <TableBody>
+    <TableBody displayRowCheckbox={true}>
         <Item id="1" name="test1" description="test1" />
         <Item id="1" name="test1" description="test1" />
         <Item id="1" name="test1" description="test1" />

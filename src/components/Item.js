@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-// import RaisedButton from 'material-ui/RaisedButton';
+import React, {Component} from 'react';
 import {
   Table,
   TableBody,
@@ -8,14 +7,12 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
-import IconButton from 'material-ui/IconButton';
-import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
 class Item extends Component {
     render() {
+        const { yourProps, ...other } = this.props;
         return (
-          <TableRow>
+          <TableRow {...other}>
             <TableRowColumn>{this.props.id}</TableRowColumn>
             <TableRowColumn>{this.props.name}</TableRowColumn>
             <TableRowColumn>{this.props.description}</TableRowColumn>
