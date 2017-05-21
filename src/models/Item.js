@@ -1,7 +1,7 @@
 export default class Item {
     constructor(item = {}) {
         if (typeof item.name === 'string') this.name = item.name;
-        else throw 'A valid name is required';
+        else throw new Error('A valid name is required');
 
         if (typeof item.description === 'string') this.description = item.description;
         else this.description = '';
@@ -28,6 +28,8 @@ export default class Item {
                 return 'Low Stock';
             case 2:
                 return 'Out of Stock';
+            default:
+                return '';
         }
     }
 }

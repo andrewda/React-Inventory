@@ -1,7 +1,7 @@
 export default class Location {
     constructor(location = {}) {
         if (typeof location.name === 'string') this.name = location.name;
-        else throw 'A valid name is required';
+        else throw new Error('A valid name is required');
 
         if (typeof location.description === 'string') this.description = item.description;
         else this.description = '';
