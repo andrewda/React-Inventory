@@ -11,8 +11,9 @@ import {
 class Item extends Component {
     render() {
         const { id, name, status, ...other } = this.props;
+
         return (
-            <TableRow {...other}>
+            <TableRow selectable={false} {...other}>
                 <TableRowColumn>{id}</TableRowColumn>
                 <TableRowColumn>{name}</TableRowColumn>
                 <TableRowColumn>{status}</TableRowColumn>
