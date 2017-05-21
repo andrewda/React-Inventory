@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
 
-import ItemsReducer from './items';
+import items from './items';
+import firebaseRef from './firebaseRef';
 
 const rootReducer = combineReducers({
-    items: ItemsReducer,
+    items, firebaseRef
 });
 
 export default rootReducer;

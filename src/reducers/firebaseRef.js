@@ -1,10 +1,10 @@
-import { ITEMS_REPLACE } from '../actions/types';
+import { FIREBASE_REF_SET } from '../actions/types';
 
-const INITIAL_STATE = {};
+const INITIAL_STATE = null;
 
 export default (state = INITIAL_STATE, action) => {
 	switch (action.type) {
-		case ITEMS_REPLACE:
+		case FIREBASE_REF_SET:
 			return action.value;
 		default:
 			return state;

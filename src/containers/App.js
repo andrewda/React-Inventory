@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import { Provider } from 'react-redux';
+import { connect } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import AppBar from 'material-ui/AppBar';
-
 import * as firebase from 'firebase';
 
 import Routes from './Routes';
 
-import store from '../store';
+import * as actions from '../actions/firebaseRef';
 
 import '../styles/App.css';
+
+injectTapEventPlugin();
 
 const config = {
     apiKey: "AIzaSyAwwBdlVUGdmKh8hoQstTfceEoWwcgnHlE",
@@ -21,33 +22,23 @@ const config = {
     messagingSenderId: "596898757396"
 };
 
-firebase.initializeApp(config);
-
-
-firebase.database().ref('items/').set({
-    id: "1",
-    name: "test1",
-    description : "test1"
- });
- 
-injectTapEventPlugin();
+const firebaseApp = firebase.initializeApp(config);
 
 class App extends Component {
+    componentWillMount() {
+        this.props.setFirebaseRef(firebaseApp.database().ref())
+    }
+
     render() {
         return (
-            <Provider store={store}>
-                <MuiThemeProvider>
-                    <div>
-                        <AppBar showMenuIconButton={false} />
-                        <Routes />
-                    </div>
-                </MuiThemeProvider>
-            </Provider>
+            <MuiThemeProvider>
+                <div>
+                    <AppBar showMenuIconButton={false} />
+                    <Routes />
+                </div>
+            </MuiThemeProvider>
         );
     }
 }
 
-
-
-
-export default App;
+export default connect(null, actions)(App);

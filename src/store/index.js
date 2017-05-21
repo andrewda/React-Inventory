@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware } from 'redux';
-import PromiseMiddleware from 'redux-promise';
+import ThunkMiddleware from 'redux-thunk';
 
 import reducers from '../reducers';
 
-const createStoreWithMiddleware = applyMiddleware(PromiseMiddleware)(createStore);
+const createStoreWithMiddleware = applyMiddleware(ThunkMiddleware)(createStore);
 
 export default createStoreWithMiddleware(reducers);
