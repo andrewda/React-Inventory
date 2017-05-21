@@ -1,5 +1,3 @@
-import * as firebase from 'firebase';
-
 import { ITEMS_REPLACE } from './types';
 
 /**
