@@ -18,7 +18,7 @@ class App extends Component {
             <Provider store={store}>
                 <MuiThemeProvider>
                     <div>
-                        <AppBar ishowMenuIconButton={false} />
+                        <AppBar showMenuIconButton={false} />
                         <Routes />
                     </div>
                 </MuiThemeProvider>

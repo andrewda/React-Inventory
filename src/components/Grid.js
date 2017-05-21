@@ -28,7 +28,7 @@ class Grid extends Component {
     return (
       <div>
         <GridList cellHeight={cellHeight}>
-          <GridTile styles={styles.gridList}>
+          <GridTile style={styles.gridList}>
             <Paper style={styles.paper} zDepth={1}>
               <h1 style={styles.header}>Browse by location</h1>
             </Paper>
