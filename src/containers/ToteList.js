@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 
-import Header from '../components/Header';
-import SideBar from '../components/SideBar';
-import AppBar from 'material-ui/AppBar';
-import ToteList from '../components/ToteList'
-import Grid from '../components/Grid'
+import ToteList from '../components/ToteList';
 
 import logo from '../logo.svg';
 
