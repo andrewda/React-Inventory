@@ -2,15 +2,15 @@ import React from 'react';
 import { GridList, GridTile } from 'material-ui/GridList';
 import Paper from 'material-ui/Paper';
 
-const cellHeight = 250
+const cellHeight = (window.innerHeight-100)/2; // Subtract off for banner
 
 const styles = {
     gridList: {
         textAlign: 'center'
     },
     paper: {
-        height: '80%',
-        width: '80%',
+        height: '85%',
+        width: '85%',
         margin: 'auto',
         textAlign: 'center'
     },
