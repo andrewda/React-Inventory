@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "1.0.1"
+    "react-scripts": "1.0.1",
+    "firebase-tools": "^3.9.0"
   },
   "dependencies": {
     "firebase": "^4.0.0",
@@ -21,6 +22,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "firebase deploy",
+    "build:deploy": "react-scripts build && firebase deploy",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
