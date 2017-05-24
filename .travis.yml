@@ -1,16 +1,13 @@
 language: node_js
 node_js:
   - 6
-  - 7
 cache:
   directories:
     - node_modules
+install:
+  - npm install -g firebase-tools
 script:
   - npm test
-before_deploy:
+after_success:
   - npm run build
-deploy:
-  provider: firebase
-  token:
-    secure: "IleDxdYXOeMCTpkrIa/rXJoPhXYoaJtJQfwPwML2Rt0AMXpLX4UJZoVvw2n9aPxI5UmcoARBh488yfeWfQBzf5HAsfkwI4xZjyvvjt3Qrgr4PzFVKnMQOXus5rPECz6F14hZCSkH6JpshdDNiBT9TlxSuslhEt4QPIE5mubbayVgpLe8/tXwDpMcNPw1n+C8tz1KAxQ9cLc4IICPRfGMBWfFylxcTNXsncMiv5Z7z/JQL1D717dDucWHbgGJJjPK/IaK9xDL1gM0G/M7QxdWxX1lFPix1V5r0Qhymhj/JBpHgHjOKfk1F9jnkKx3cRUSclJQGOx1R6+aq/xNcRK8Jyyg/5/9oke8GKXv+wCrz2sQJM9jPMXEL4K/UQpjeqz1QwAZ5+eAommVsLRmED5Y/1PlDR3hWw54BKLqFo7p/uGOb9xlqq+7iplXZdAsQ/63B7XYR1vmsl9exCbVMDcTcx7X/80fjnIxahBvvs5oA5mKEaKngAVMObYCPvbCpELyPPUQcYZ7cSNvty50E2Ye4bsZRRWB+laOIPVXWqUqH5lY8zdVMLT6nsLMz7YIO5qqupW6yHEstQMPWeypT4hNHJFp8SqFHwah6ffAOKoqKnRSgwkxpv+EBFT3Q/5ockeZPfa247XEd7teaQMrVXu5jgS3v4VcqYE00seMQWbTTx4="
-  project: "frc-inventory"
+  - firebase deploy --token ${FIREBASE_TOKEN} --project ${FIREBASE_PROJECT}
