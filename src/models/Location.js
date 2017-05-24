@@ -3,7 +3,7 @@ export default class Location {
         if (typeof location.name === 'string') this.name = location.name;
         else throw new Error('A valid name is required');
 
-        if (typeof location.description === 'string') this.description = item.description;
+        if (typeof location.description === 'string') this.description = location.description;
         else this.description = '';
 
         // If items is an array

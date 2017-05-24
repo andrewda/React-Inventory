@@ -9,6 +9,7 @@ import Routes from '../components/Routes';
 
 import { setFirebaseRef } from '../actions/firebaseRef';
 import { listenForItemChanges } from '../actions/items';
+import { listenForLocationChanges } from '../actions/locations';
 
 import '../styles/App.css';
 
@@ -29,6 +30,7 @@ class App extends Component {
     componentWillMount() {
         this.props.setFirebaseRef(firebaseApp.database().ref())
         this.props.listenForItemChanges();
+        this.props.listenForLocationChanges();
     }
 
     render() {
@@ -45,7 +47,8 @@ class App extends Component {
 
 const mapDispatchToProps = (dispatch) => ({
     setFirebaseRef: (ref) => dispatch(setFirebaseRef(ref)),
-    listenForItemChanges: () => dispatch(listenForItemChanges())
+    listenForItemChanges: () => dispatch(listenForItemChanges()),
+    listenForLocationChanges: () => dispatch(listenForLocationChanges())
 });
 
 export default connect(null, mapDispatchToProps)(App);
