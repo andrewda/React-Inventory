@@ -12,6 +12,9 @@ export default class Item {
         if (typeof item.status === 'number') this.status = item.status;
         else this.status = 0;
 
+        if (typeof item.price === 'number') this.price = item.price;
+        else this.price = 0;
+
         if (typeof item.location === 'string') this.location = item.location;
         else this.location = '';
 
