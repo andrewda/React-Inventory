@@ -1,7 +1,7 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
 
-import ItemsTable from '../ItemsTable';
+import ItemTable from '../ItemTable';
 
 const style = {
     position: 'relative',
@@ -13,7 +13,7 @@ const style = {
 const AllItems = (props) => (
     <div className="AllItems page">
         <Paper style={style}>
-            <ItemsTable items={props.items} />
+            <ItemTable items={props.items} />
         </Paper>
     </div>
 );

@@ -22,7 +22,7 @@ const renderItems = (props) => {
     return items;
 };
 
-const ItemsTable = (props) => (
+const ItemTable = (props) => (
     <Table>
         <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
             <TableRow>
@@ -37,4 +37,4 @@ const ItemsTable = (props) => (
     </Table>
 );
 
-export default ItemsTable;
+export default ItemTable;
