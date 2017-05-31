@@ -32,9 +32,14 @@ const muiTheme = getMuiTheme({
     accent1Color: purple200
   },
   appBar: {
-    height: 55
+    height: 55,
   }
 });
+
+const style = {
+    position: "fixed",
+    top: 0
+}
 
 const firebaseApp = firebase.initializeApp(config);
 
@@ -49,7 +54,7 @@ class App extends Component {
         return (
             <MuiThemeProvider muiTheme={muiTheme}>
                 <div>
-                    <AppBar showMenuIconButton={false} />
+                    <AppBar showMenuIconButton={false} style={style} />
                     <Routes />
                 </div>
             </MuiThemeProvider>
