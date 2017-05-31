@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import { deepPurple500, purple200 } from 'material-ui/styles/colors';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import AppBar from 'material-ui/AppBar';
 import * as firebase from 'firebase';
@@ -24,6 +26,16 @@ const config = {
     messagingSenderId: "596898757396"
 };
 
+const muiTheme = getMuiTheme({
+  palette: {
+    primary1Color: deepPurple500,
+    accent1Color: purple200
+  },
+  appBar: {
+    height: 55
+  }
+});
+
 const firebaseApp = firebase.initializeApp(config);
 
 class App extends Component {
@@ -35,7 +47,7 @@ class App extends Component {
 
     render() {
         return (
-            <MuiThemeProvider>
+            <MuiThemeProvider muiTheme={muiTheme}>
                 <div>
                     <AppBar showMenuIconButton={false} />
                     <Routes />
