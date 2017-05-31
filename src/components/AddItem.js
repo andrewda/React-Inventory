@@ -5,6 +5,15 @@ import TextField from 'material-ui/TextField';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
+const style = {
+    margin: 0,
+    top: 'auto',
+    right: 20,
+    bottom: 20,
+    left: 'auto',
+    position: 'fixed',
+};
+
 class AddItem extends Component {
     state = {
         open: false
@@ -22,7 +31,7 @@ class AddItem extends Component {
         const actions = [
             <FlatButton
                 label="Cancel"
-                primary={true}
+                primary={false}
                 onTouchTap={this.handleClose}
             />,
             <FlatButton
@@ -35,7 +44,7 @@ class AddItem extends Component {
 
         return (
             <div>
-                <FloatingActionButton onTouchTap={this.handleOpen}>
+                <FloatingActionButton style={style} secondary={true} onTouchTap={this.handleOpen}>
                     <ContentAdd/>
                 </FloatingActionButton>
                 <Dialog title="Add Item" actions={actions} modal={false} open={this.state.open} onRequestClose={this.handleClose}>

@@ -15,8 +15,8 @@ const AllItems = (props) => (
     <div className="AllItems page">
         <Paper style={style}>
             <ItemTable items={props.items} />
-            <AddItem />
         </Paper>
+        <AddItem />
     </div>
 );
 
